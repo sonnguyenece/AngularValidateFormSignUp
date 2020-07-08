@@ -1,0 +1,72 @@
+<h2 class="text-center">User profile form</h2>
+<form #profileForm="ngForm" novalidate (ngSubmit)="onSubmit(profileForm)" class="row justify-content-md-center">
+  <div class="col-md-6">
+    <div class="form-group row">
+      <label for="example-text-input" class="col-md-2 col-form-label">Name: </label>
+
+      <div class="col-md-10">
+        <!--        binding data cho control-->
+        <input
+          [ngModel]="profile.username"
+          name="username"
+          type="text" class="form-control" id="example-text-input">
+      </div>
+      <!--      <div class="col-md-10">-->
+      <!--        <input-->
+      <!--          ngModel="profile.username"-->
+      <!--          name="username"-->
+      <!--          type="text" class="form-control" id="example-text-input" >-->
+      <!--      </div>-->
+
+    </div>
+    <div class="form-group row">
+      <label for="example-email-input" class="col-md-2 col-form-label">Email:</label>
+      <div class="col-md-10">
+        <input type="email" class="form-control" id="example-email-input" [ngModel]="profile.email" name="email">
+      </div>
+    </div>
+
+    <fieldset ngModelGroup="social">
+        <div class="form-group row">
+          <label for="example-url-fb" class="col-md-2 col-form-label">Facebook:</label>
+          <div class="col-md-10">
+            <input class="form-control" type="url" id="example-url-fb" [ngModel]="profile.facebook" name="facebook">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-url-twt" class="col-md-2 col-form-label">Twitter:</label>
+          <div class="col-md-10">
+            <input type="url" class="form-control" id="example-url-twt" [ngModel]="profile.twitter" name="twitter">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-url-web" class="col-md-2 col-form-label">Website:</label>
+          <div class="col-md-10">
+            <input class="form-control" type="url" id="example-url-web" [ngModel]="profile.website" name="website">
+          </div>
+        </div>
+    </fieldset>
+
+    <div class="form-group row">
+      <label for="example-tel-input" class="col-md-2 col-form-label">Tel:</label>
+      <div class="col-md-10">
+        <input class="form-control" type="tel" id="example-tel-input" [ngModel]="profile.tel" name="tel">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-10 offset-md-2">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<hr>
+
+<!--the pre la the giu nguyen dinh dang-->
+<pre>
+  {{profileForm.value|json}}
+</pre>
+<pre>
+{{profile|json}}
+</pre>
